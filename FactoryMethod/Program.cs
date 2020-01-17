@@ -8,12 +8,14 @@ namespace FactoryMethod
     {
         static void Main(string[] args)
         {
-            Building[] buildings = { new Casern(), new ShootingRange() };
-            foreach (Building building in buildings)
-            {
-                Warrior warrior = building.CreateWarrior();
-                warrior.SetReady();
-            }
+           
+            Building b = new Casern();
+            Warrior warrior = b.CreateWarrior();
+            warrior.SetReady();
+
+            b = new ShootingRange();
+            warrior = b.CreateWarrior();
+            warrior.SetReady();
         }
     }
 }
